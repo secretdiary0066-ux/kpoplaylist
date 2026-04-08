@@ -1,6 +1,12 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
-const ai = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || "");
+// 기존: const ai = ...
+// 변경: 함수 안으로 옮기거나 아래처럼 작성
+const getAI = () => {
+  const key = import.meta.env.VITE_GEMINI_API_KEY;
+  if (!key) throw new Error("API Key is missing!");
+  return new GoogleGenerativeAI(key);
+};
 
 export interface Song {
   title: string;
