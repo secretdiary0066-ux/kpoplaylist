@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-kpop-pink: #FF2E63;
+  --color-kpop-blue: #08D9D6;
+  --color-kpop-dark: #252A34;
+  --color-kpop-light: #EAEAEA;
+}
+
+@layer base {
+  body {
+    @apply bg-kpop-dark text-kpop-light font-sans;
+  }
+  
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-kpop-pink to-kpop-blue;
+}
+
+.kpop-button {
+  @apply px-6 py-3 rounded-full font-display transition-all duration-300 active:scale-95 disabled:opacity-50;
+}
+
+.kpop-button-primary {
+  @apply px-6 py-3 rounded-full font-display transition-all duration-300 active:scale-95 disabled:opacity-50 bg-gradient-to-r from-kpop-pink to-kpop-blue text-white shadow-lg shadow-kpop-pink/20 hover:shadow-kpop-pink/40;
+}
+
+.kpop-button-secondary {
+  @apply px-6 py-3 rounded-full font-display transition-all duration-300 active:scale-95 disabled:opacity-50 border-2 border-white/20 hover:bg-white/10;
+}
