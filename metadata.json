@@ -1,0 +1,5 @@
+{
+  "name": "K-Pop Mood Playlist",
+  "description": "Generate personalized K-Pop playlists based on your current mood and emotions using AI.",
+  "requestFramePermissions": []
+}
